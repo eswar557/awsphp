@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-6">
-                    <form method="POST" action="index.php">
+                    <form method="POST" action="index.php" class=" mt-5">
                         <?php if(@$_GET['error'] == 1) { print $_SESSION['password']?>
                         <div class="alert alert-danger">
                             Login incorrect. Please try again
