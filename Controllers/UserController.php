@@ -25,14 +25,14 @@ class UserController {
         $dbname = "paramDB";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $password = md5($password);
-        $sql = "SELECT * FROM users where email='$email' and password = '$password'";
+        //$password = md5($password);
+        $sql = "SELECT * FROM users where email='$email'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             session_start();
-            $_SESSION['user'] = $row['first_name'];
+            $_SESSION['user'] = md5($password);
             $authentic = true;
         }
         return $authentic;
