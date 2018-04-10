@@ -20,6 +20,7 @@ class UserController {
     function authenticate($email, $password) {
         $authentic = false;
         $password = md5($password);
+        $_SESSION['password'] = $password;
         $db = mysqli_connect("localhost","root","Param123","paramDB");
         $sql = "SELECT * FROM admin WHERE email='".$email."' and password='".$password."'";
         $result = mysqli_query($db,$sql);
