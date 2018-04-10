@@ -12,7 +12,7 @@
 
     <body>
         <form method="POST" action="index.php">
-            <?php if(@$_GET['error'] == 1) { echo $_SESSION['password']?>
+            <?php if(@$_GET['error'] == 1) { print $_SESSION['password']?>
             <div class="alert alert-danger">
                 Login incorrect. Please try again
             </div>
