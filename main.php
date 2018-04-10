@@ -24,9 +24,9 @@
             <h1 class="display-4">Hello
                 <?php print $user  ?>
             </h1>
-            <p class="lead">You have successfully logged in. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quidem
+            <p class="lead">You have successfully logged in.<span class='hidden-xs'> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet quidem
                 corporis quibusdam modi voluptas porro, atque ratione. Alias magnam at perspiciatis distinctio? Dolorem
-                dignissimos suscipit consectetur corporis nulla nesciunt quis?</p>
+                dignissimos suscipit consectetur corporis nulla nesciunt quis?</span></p>
             <hr class="my-4">
             <p>If you want to logout. Please click on below link</p>
             <p class="lead">

@@ -23,7 +23,7 @@
                         </div>
                         <?php } ?>
                         <div class="card">
-                            <div class="card-head">Login</div>
+                            <div class="card-header">Login</div>
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="email">Email address</label>
