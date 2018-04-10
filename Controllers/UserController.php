@@ -1,5 +1,4 @@
 <?php
-include_once('../config.php')
 class UserController {
     function UserController()
     {
@@ -20,13 +19,15 @@ class UserController {
 
     function authenticate($email, $password) {
         $authentic = false;
-        $sql = "SELECT id FROM admin WHERE email = '$email' and password = 'md5($password)'";
+        $password = md5($password);
+        $db = mysqli_connect("localhost","root","Param123","paramDB");
+        $sql = "SELECT id FROM admin WHERE email = '$email' and password = '$password'";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
         if($count == 1) {
             session_start();
-            $_SESSION['user'] = $row['first_name'].' '.$row['last_name'];
+            $_SESSION['user'] = $row['first_name'];//.' '.$row['last_name'];
             $authentic = true;
         }
         return $authentic;
