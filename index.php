@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col align-self-center">
-                <form class="col-md-6 col-md-offset-3">
+                <form >
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
