@@ -21,18 +21,18 @@ class UserController {
         $authentic = false;
         $servername = "localhost";
         $username = "root";
-        $password = "Param123";
+        $db_password = "Param123";
         $dbname = "paramDB";
         // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        //$password = md5($password);
-        $sql = "SELECT * FROM users where email='$email'";
+        $conn = new mysqli($servername, $username, $db_password, $dbname);
+        $password = md5($password);
+        $sql = "SELECT * FROM users where email='$email' and password = '$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             session_start();
-            $_SESSION['user'] = md5($password);
+            $_SESSION['user'] = $row['first_name'];
             $authentic = true;
         }
         return $authentic;
