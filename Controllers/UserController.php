@@ -35,6 +35,7 @@ class UserController {
             $_SESSION['user'] = $row['first_name'].' '.$row['last_name'];
             $authentic = true;
         }
+        $conn->close();
         return $authentic;
     }
     function logout() {
