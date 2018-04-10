@@ -22,7 +22,7 @@ class UserController {
         
         if($email == 'admin' && $password == 'admin') {
             session_start();
-            $_SESSION['user'] = $email//.' '.$row['last_name'];
+            $_SESSION['user'] = $email;
             $authentic = true;
         }
         return $authentic;
