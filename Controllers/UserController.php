@@ -19,10 +19,20 @@ class UserController {
 
     function authenticate($email, $password) {
         $authentic = false;
-        
-        if($email == 'admin' && $password == 'admin') {
+        $servername = "localhost";
+        $username = "root";
+        $password = "Param123";
+        $dbname = "paramDB";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        $sql = "SELECT * FROM users where email='admin@test.com'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
             session_start();
-            $_SESSION['user'] = $email;
+            $_SESSION['user'] = $row['first_name'];
             $authentic = true;
         }
         return $authentic;
