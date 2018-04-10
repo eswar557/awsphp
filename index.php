@@ -14,9 +14,8 @@
 </head>
 
 <body>
-    <h1>Hello, world!</h1>
     <div class="container">
-        <form>
+        <form class="col-md-6 col-md-offset-3">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
