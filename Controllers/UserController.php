@@ -26,7 +26,7 @@ class UserController {
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
 
-        $sql = "SELECT * FROM users where email='admin@test.com'";
+        $sql = "SELECT * FROM users where email='$email'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
