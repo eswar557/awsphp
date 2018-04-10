@@ -25,8 +25,8 @@ class UserController {
         $dbname = "paramDB";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
-
-        $sql = "SELECT * FROM users where email='$email'";
+        $password = md5($password);
+        $sql = "SELECT * FROM users where email='$email' and password = '$password'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
