@@ -4,10 +4,6 @@ class UserController {
     {
 
     }
-    function create($username, $password, $email)
-    {
-
-    }
 
     function login($email, $password) {
         if($this->authenticate($email, $password)) {
@@ -23,7 +19,6 @@ class UserController {
         $username = "root";
         $db_password = "Param123";
         $dbname = "paramDB";
-        // Create connection
         $conn = new mysqli($servername, $username, $db_password, $dbname);
         $password = md5($password);
         $sql = "SELECT * FROM users where email='$email' and password = '$password'";
