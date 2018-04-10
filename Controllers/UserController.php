@@ -21,7 +21,7 @@ class UserController {
         $authentic = false;
         $password = md5($password);
         $db = mysqli_connect("localhost","root","Param123","paramDB");
-        $sql = "SELECT id FROM admin WHERE email = '$email' and password = '$password'";
+        $sql = "SELECT * FROM admin WHERE email='$email' and password='$password'";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
         $count = mysqli_num_rows($result);
