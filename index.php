@@ -9,6 +9,7 @@
         $indexController = New IndexController($indexModel);
         $indexView = New IndexView($indexController, $indexModel);
         print $indexView->index();
+    } else {
         $requestedController = $url[0]; 
         $requestedAction = isset($url[1])? $url[1] :'';
 
