@@ -5,7 +5,7 @@
     $db = "paramDB";
     mysql_connect($host, $user, $password);
     mysql_select_db($db);
-    if(isset(["pr_email"])) {
+    if(isset($_POST["pr_email"])) {
         $email = $_POST['pr_email'];
         $pass = $_POST['pr_password'];
 
@@ -43,7 +43,7 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        <form>
+                        <form method="POST" action="#">
                             <div class="form-group">
                                 <label for="pr_email">Email address</label>
                                 <input type="email" class="form-control" id="pr_email" aria-describedby="emailHelp" placeholder="Enter email">
