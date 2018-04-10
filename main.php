@@ -17,6 +17,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    You are logged in <?php print $user->get_username()  ?>. <a href="index.php?op=logout">Logout</a>
+    You are logged in. <a href="index.php?op=logout">Logout <?php print $user->get_username()  ?></a>
 </body>
 </html>
