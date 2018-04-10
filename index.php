@@ -1,26 +1,3 @@
-<?php
-    $host = "localhost";
-    $user = "root";
-    $password = "Param123";
-    $db = "paramDB";
-    mysql_connect($host, $user, $password);
-    mysql_select_db($db);
-    if($_POST['pr_email']) {
-        $email = $_POST['pr_email'];
-        $pass = $_POST['pr_password'];
-
-        $sql = "select * from user from email='".$email."' AND password='".md5($pass)."' limit 1";
-        $result = mysql_query($sql);
-        if(mysql_num_rows($result) == 1) {
-            echo "You have successfully logged in";
-            exit();
-        } else {
-            echo "You have entered incorrect password";
-            exit();
-        }
-    }
-?>
-
 <!doctype html>
 <html lang="en">
 
