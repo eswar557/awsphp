@@ -5,7 +5,7 @@
     $db = "paramDB";
     mysql_connect($host, $user, $password);
     mysql_select_db($db);
-    if(isset($_POST["pr_email"])) {
+    if($_POST['pr_email']) {
         $email = $_POST['pr_email'];
         $pass = $_POST['pr_password'];
 
