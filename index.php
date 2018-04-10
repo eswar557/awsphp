@@ -1,39 +1,22 @@
-<?php
-    $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'],'/')) : '/';
-    var_dump($url);
-    if($url == "/") {
-        require_once __DIR__.'/Models/index_model.php';
-        require_once __DIR__.'/Controllers/index_controller.php';
-        require_once __DIR__.'/Views/index_view.php';
-        $indexModel = New IndexModel();
-        $indexController = New IndexController($indexModel);
-        $indexView = New IndexView($indexController, $indexModel);
-        print $indexView->index();
-    } else {
-        $requestedController = $url[0]; 
-        $requestedAction = isset($url[1])? $url[1] :'';
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        $ctrlPath = __DIR__.'/Controllers/'.$requestedController.'_controller.php';
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        if (file_exists($ctrlPath)) {
-            require_once __DIR__.'/Models/'.$requestedController.'_model.php';
-            require_once __DIR__.'/Controllers/'.$requestedController.'_controller.php';
-            require_once __DIR__.'/Views/'.$requestedController.'_view.php';
-
-            $modelName      = ucfirst($requestedController).'Model';
-            $controllerName = ucfirst($requestedController).'Controller';
-            $viewName       = ucfirst($requestedController).'View';
-            $controllerObj  = new $controllerName( new $modelName );
-            $viewObj        = new $viewName( $controllerObj, new $modelName );
-            if ($requestedAction != '')
-            {
-                print $viewObj->$requestedAction($requestedParams);
-
-            } else {
-                header('HTTP/1.1 404 Not Found');
-                die('404 - The file - '.$ctrlPath.' - not found');
-            }
-
-        }
-    }
-?>
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <div class="jumbotron">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos temporibus ratione nisi repudiandae quos tempora provident! Explicabo eius quibusdam optio inventore nam dicta harum minus, voluptatem sapiente excepturi reprehenderit reiciendis.</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
